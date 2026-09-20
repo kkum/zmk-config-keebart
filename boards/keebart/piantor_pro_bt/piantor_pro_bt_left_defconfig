@@ -1,9 +1,5 @@
 # SPDX-License-Identifier: MIT
 
-CONFIG_SOC_SERIES_NRF52X=y
-CONFIG_SOC_NRF52840_QIAA=y
-CONFIG_BOARD_PIANTOR_PRO_BT_LEFT=y
-
 # Enable MPU
 CONFIG_ARM_MPU=y
 
@@ -28,8 +24,7 @@ CONFIG_I2C=y
 CONFIG_I2C_NRFX=y
 CONFIG_PINCTRL=y
 
-# Enable RGB underglow
-CONFIG_WS2812_STRIP=y
+# Enable RGB underglow (the ws2812-spi driver auto-selects from the devicetree node)
 CONFIG_ZMK_RGB_UNDERGLOW=y
 CONFIG_ZMK_RGB_UNDERGLOW_BRT_MAX=30
 

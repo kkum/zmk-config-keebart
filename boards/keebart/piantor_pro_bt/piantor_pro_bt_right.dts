@@ -8,8 +8,8 @@
 #include <dt-bindings/led/led.h>
 
 / {
-    model = "piantor_pro_bt_left";
-    compatible = "piantor_pro_bt_left";
+    model = "piantor_pro_bt_right";
+    compatible = "piantor_pro_bt_right";
 
     chosen {
         zmk,underglow = &led_strip;
@@ -19,29 +19,37 @@
         compatible = "zmk,kscan-gpio-direct";
         wakeup-source;
         input-gpios
-            = <&gpio0  7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            = <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0 30 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0  8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio1  4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio1  6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio1  9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0  7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0  5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio1  2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&gpio0  9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio1  4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio1  2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio1  0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio1  6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&gpio0 24 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&gpio0 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio0 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio0  2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio1  0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&gpio1 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio0 30 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio0  5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio1  9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio0  8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio0 28 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio0  3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0  2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&gpio1 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0  3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0 28 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
         ;
     };
+};
+
+&default_transform {
+    col-offset = <21>;
+};
+
+&five_col_transform {
+    col-offset = <21>;
 };
 
 &pinctrl {
@@ -55,7 +63,7 @@
         group1 {
             psels = <NRF_PSEL(SPIM_MOSI, 0, 26)>;
             low-power-enable;
-        };  
+        };
     };
 };
 
